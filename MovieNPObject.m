@@ -104,6 +104,7 @@ static NPClass movieNPClass = {
 
 NPObject *createMovieNPObject(NPP npp, QTMovie *movie)
 {
+    NSArray *movieTypes = [QTMovie movieFileTypes:QTIncludeAllTypes];
     MovieNPObject *movieNPObject = (MovieNPObject *)browser->createobject(npp, &movieNPClass);
 
     movieNPObject->movie = [movie retain];
